@@ -1,6 +1,7 @@
 {
   "name": "Onion-Utils",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,5 +19,10 @@
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.1"
+  },
+  "dependencies": {
+    "husky": "^9.1.4",
+    "packages": "^0.0.8",
+    "vitest": "^2.0.5"
   }
 }
