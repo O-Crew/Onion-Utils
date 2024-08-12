@@ -4,11 +4,12 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "jsx": "preserve",
     "module": "ESNext",
-    "rootDir": ".",
-    "moduleResolution": "Bundler",
-    "baseUrl": ".",
+    "rootDir": "./",
+    "moduleResolution": "Node",
+    "baseUrl": "./",
     "paths": {
-      "@onion/*": ["./packages/*"]
+      "@onion/core": ["./packages/core"],
+      "@onion/core/*": ["./packages/core/*"]
     },
     "resolveJsonModule": true,
     "declaration": true,
@@ -20,5 +21,5 @@
     "skipLibCheck": true
   },
   "include": ["src/**/*", "packages/**/*"],
-  "exclude": ["node_module", "eslint.config.mjs", "packages/**/__test__/*.test.ts"]
+  "exclude": ["node_module", "eslint.config.mjs"]
 }
