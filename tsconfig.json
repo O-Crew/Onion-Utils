@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ESNext",                                  
-    "lib": ["ESNext", "DOM","DOM.Iterable"],
-    "jsx": "preserve",                                
-    "module": "ESNext",                                
-    "rootDir": ".",                     
-    "moduleResolution": "Bundler",                     
-    "baseUrl": ".",                                  
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "preserve",
+    "module": "ESNext",
+    "rootDir": ".",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
     "paths": {
       "@onion/*": ["./packages/*"]
-    },                                      
-    "resolveJsonModule": true,                        
-    "declaration": true,                              
-    "declarationDir": "./types",                           
-    "esModuleInterop": true,                              
-    "forceConsistentCasingInFileNames": true,           
-    "strict": true,                                      
-    "strictNullChecks": true,                        
-    "skipLibCheck": true                                
+    },
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*", "packages/**/*"],
-  "exclude": ["node_module","eslint.config.mjs","packages/**/__test__/*.test.ts"]
+  "exclude": ["node_module", "eslint.config.mjs", "packages/**/__test__/*.test.ts"]
 }
