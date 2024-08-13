@@ -1,9 +1,12 @@
 import { rawTypeUtil } from 'packages/shared'
 
+let clonedMap = new WeakMap()
 export function useClone(target: any): any {
-  const rawType = rawTypeUtil(target)
+  if (typeof target !== 'object' || target === null) return target
 
-  if (typeof target !== 'object') return target
+  if (clonedMap.has(target)) return clonedMap.get(target)
+
+  const rawType = rawTypeUtil(target)
 
   if (rawType === 'regexp') return new RegExp(target)
 
@@ -12,8 +15,6 @@ export function useClone(target: any): any {
       return useClone(item)
     })
   }
-
-  if (target === null) return target
 
   if (rawType === 'date') {
     return new Date(target)
@@ -24,8 +25,9 @@ export function useClone(target: any): any {
       return new Map([[useClone(key), useClone(value)]])
     }
   }
-  const source = {} as { [key: string]: any }
 
+  const source = {} as { [key: string]: any }
+  clonedMap.set(target, source)
   Object.keys(target).forEach((key) => {
     if (rawTypeUtil(target[key]) === 'date') {
       source[key] = new Date(target[key])
@@ -33,5 +35,8 @@ export function useClone(target: any): any {
       source[key] = useClone(target[key])
     }
   })
+
+  clonedMap = new WeakMap()
+
   return source
 }
