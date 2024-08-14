@@ -5,6 +5,13 @@ interface OptionsParams {
   rejectOnCancel?: boolean
 }
 
+/**
+ *
+ * @param fn The function to debounce
+ * @param ms The delay in milliseconds
+ * @param options An object with optional properties
+ * @returns A debounced version of the given function
+ */
 export function useDebounce(fn: AnyFn, ms: number, options: { maxWait?: number } = {}) {
   return debounceWrapper(fn, ms, options)
 }
