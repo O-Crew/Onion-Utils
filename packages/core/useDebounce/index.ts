@@ -1,4 +1,4 @@
-import { type AnyFn, noop } from 'packages/shared'
+import { type AnyFn, noop } from '@onion/core/shared'
 
 interface OptionsParams {
   maxWait?: number
