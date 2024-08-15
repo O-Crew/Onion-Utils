@@ -6,7 +6,6 @@ interface OptionsParams {
 }
 
 /**
- *
  * @param fn The function to debounce
  * @param ms The delay in milliseconds
  * @param options An object with optional properties

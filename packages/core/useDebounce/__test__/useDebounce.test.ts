@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { useDebounce } from '../useDebounce'
+import { useDebounce } from '..'
 
 describe('useDebounce', () => {
   it('does not call the function immediately', () => {
