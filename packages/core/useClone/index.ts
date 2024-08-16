@@ -1,4 +1,4 @@
-import { rawTypeUtil } from '@onion/core/shared'
+import { rawTypeUtil } from '@onion/packages/shared'
 
 let clonedMap = new WeakMap()
 export function useClone(target: any): any {

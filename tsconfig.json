@@ -4,12 +4,14 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "jsx": "preserve",
     "module": "ESNext",
-    "rootDir": "./",
+    "rootDir": ".",
     "moduleResolution": "Node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@onion/core": ["./packages/core"],
-      "@onion/core/*": ["./packages/core/*"]
+      "@onion/core": ["./packages/core/index.ts"],
+      "@onion/core/*": ["./packages/core/*"],
+      "@onion/packages/shared": ["./packages/shared/index.ts"],
+      "@onion/packages/shared/*": ["./packages/shared/*"]
     },
     "resolveJsonModule": true,
     "declaration": true,

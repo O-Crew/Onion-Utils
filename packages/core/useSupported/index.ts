@@ -1,4 +1,4 @@
-import { BooleanFn } from '@onion/core/shared'
+import { type BooleanFn } from '@onion/packages/shared'
 
 export function useSupported(callback: BooleanFn) {
   if (typeof callback !== 'function') {
