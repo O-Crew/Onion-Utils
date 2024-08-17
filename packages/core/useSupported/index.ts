@@ -1,9 +1,12 @@
 import { type BooleanFn } from '@onion/shared'
+import { readonly } from '@onion/shared/reactivity'
 
 export function useSupported(callback: BooleanFn) {
   if (typeof callback !== 'function') {
-    return Promise.reject('Callback must be a function')
+    throw new Error('Callback must be a function')
   }
 
-  return Boolean(callback())
+  const isSupported = { value: Boolean(callback()) }
+
+  return readonly(isSupported)
 }
