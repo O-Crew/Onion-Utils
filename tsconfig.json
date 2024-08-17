@@ -10,8 +10,8 @@
     "paths": {
       "@onion/core": ["./packages/core/index.ts"],
       "@onion/core/*": ["./packages/core/*"],
-      "@onion/packages/shared": ["./packages/shared/index.ts"],
-      "@onion/packages/shared/*": ["./packages/shared/*"]
+      "@onion/shared": ["./packages/shared/index.ts"],
+      "@onion/shared/*": ["./packages/shared/*"]
     },
     "resolveJsonModule": true,
     "declaration": true,

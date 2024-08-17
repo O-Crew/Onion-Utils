@@ -10,10 +10,12 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
-    "@vueuse/core": "file:../../packages/core/dist",
+    "@onion/core": "file:../../packages/core/dist",
+    "@onion/shared": "file:../../packages/shared/dist",
     "vite": "^5.4.1"
   },
   "resolutions": {
-    "@vueuse/core": "file:../../packages/core/dist"
+    "@onion/core": "file:../../packages/core/dist",
+    "@onion/shared": "file:../../packages/shared/dist"
   }
 }
