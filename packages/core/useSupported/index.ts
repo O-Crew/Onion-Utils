@@ -1,5 +1,5 @@
 import { type BooleanFn } from '@onion/shared'
-import { readonly } from '@onion/shared/reactivity'
+import { readonly } from '@onion/shared'
 
 export function useSupported(callback: BooleanFn) {
   if (typeof callback !== 'function') {
