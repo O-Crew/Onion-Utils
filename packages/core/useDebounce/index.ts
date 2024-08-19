@@ -11,7 +11,7 @@ interface OptionsParams {
  * @param options An object with optional properties
  * @returns A debounced version of the given function
  */
-export function useDebounce(fn: AnyFn, ms: number, options: { maxWait?: number } = {}) {
+export function useDebounce(fn: AnyFn, ms: number, options: OptionsParams) {
   return debounceWrapper(fn, ms, options)
 }
 
@@ -30,18 +30,21 @@ function debounceWrapper(fn: AnyFn, ms: number, options: OptionsParams) {
   return function (...args: any) {
     return new Promise((resolve, reject) => {
       lastRejector = options.rejectOnCancel ? reject : resolve
-      if (ms <= 0) resolve(fn(...args))
-      if (timer) clearTimeout(timer)
+      if (ms <= 0 || (maxDuration !== undefined && maxDuration <= 0))
+        resolve(fn(...args))
+      if (timer) _clearTimeout(timer)
       if (maxDuration && !maxTimer) {
         maxTimer = setTimeout(() => {
           resolve(fn(...args))
+          maxTimer = undefined
           _clearTimeout(timer)
         }, maxDuration)
       }
 
       timer = setTimeout(() => {
+        if (maxTimer) _clearTimeout(maxTimer)
+        maxTimer = undefined
         resolve(fn(...args))
-        clearTimeout(maxTimer)
       }, ms)
     })
   }
